@@ -1,0 +1,27 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Category {
+  id          Int       @id @default(autoincrement())
+  title       String    @unique
+  description String?
+  products    Product[] // One-to-many relationship: a category can have multiple products
+  createdAt   DateTime  @default(now())
+}
+
+model Product {
+  id          Int      @id @default(autoincrement())
+  title       String   @unique
+  description String?
+  sku         String   @unique // SKU should be unique
+  price       Float
+  categoryId  Int      // Foreign key to Category
+  category    Category @relation(fields: [categoryId], references: [id]) // Each product belongs to a single category
+  createdAt   DateTime @default(now())
+}
