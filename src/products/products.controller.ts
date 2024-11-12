@@ -15,7 +15,6 @@ export class ProductsController {
 
   @Get('/products/:id')
   async findByID(@Param('id', ParseIntPipe) id: number) {
-    console.log('findByID', id);
     return await this.productsService.findByID(id);
   }
 

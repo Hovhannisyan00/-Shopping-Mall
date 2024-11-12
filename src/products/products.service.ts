@@ -51,7 +51,6 @@ export class ProductsService {
     const product = await this.prisma.product.findUnique({
       where: { id },
     });
-    console.log(product);
     if (!product) {
       throw new BadRequestException('Product not found');
     }
@@ -59,7 +58,6 @@ export class ProductsService {
     const category = await this.prisma.category.findUnique({
       where: { id: categoryId },
     });
-    console.log(category);
 
     const finalObject = {
       id: product.id,
