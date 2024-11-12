@@ -36,5 +36,5 @@ Run the application:
 
 bash/zsh
 Copy code
-npm start
+npm run start:dev
 Test the API: You can test the API using tools like Postman or curl.
