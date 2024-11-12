@@ -23,4 +23,12 @@ Copy code
 npm start
 API Endpoints
 GET /products: Get all products (with no categories).
-POST /products: Add a product (no validation on SKU).
+
+POST /products: Add a product (no validation on SKU)
+examples:
+{
+    "title": "Romeo and Julieta",
+    "description": "Hetaqrqir girq lav avartov vortex sax mernum en",
+    "price": 2200,
+    "category": "Books"
+}.
